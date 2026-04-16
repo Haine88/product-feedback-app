@@ -29,7 +29,7 @@ body {
 }
  
 .company-card {
-  background-image: url('../../assets/suggestions/desktop/background-header.png');
+  background-image: url('../assets/suggestions/desktop/background-header.png');
   background-size: cover;
   background-position: center;
   border-radius: 14px;
