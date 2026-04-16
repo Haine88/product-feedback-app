@@ -4,60 +4,77 @@ Base URL: `https://REPLACE-THIS-WITH-YOUR-DEPLOYED-URL.onrender.com`
 
 ## Overview
 
-| Resource         | Method | Endpoint                      | Description                              |
-|------------------|--------|-------------------------------|------------------------------------------|
-| `suggestions`    | GET    | /get-all-suggestions          | Write your description here              |
-| `suggestions`    | GET    | /get-suggestions-by-category  | Write your description here              |
-| `suggestions`    | POST   | /add-one-suggestion           | Write your description here              |
+| Resource      | Method | Endpoint                               | Description                           |
+|---------------|--------|----------------------------------------|---------------------------------------|
+| `suggestions` | GET    | /get-all-suggestions                   | Returns all suggestions               |
+| `suggestions` | GET    | /get-suggestions-by-category/:category | Returns suggestions filtered by category |
+| `suggestions` | POST   | /add-one-suggestion                    | Adds a new suggestion                 |
 
 ---
 
-### 🔹 GET `/get-all-suggestions`
+## 🔹 GET `/get-all-suggestions`
 
-**Description:** Write your description here
+**Description:** Returns an array of all suggestions from the database.
 
 **Example Response:**
-
-```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+```json
+[
+  {
+    "id": 1,
+    "title": "Very useful",
+    "description": "I use it to add value.",
+    "category": "UX"
+  },
+  {
+    "id": 2,
+    "title": "Add animation",
+    "description": "Make the page sparkle or add some sort of animation for fun interaction",
+    "category": "UX"
+  }
+]
 ```
 
 ---
 
-### 🔹 GET `/get-suggestions-by-category/:category`
+## 🔹 GET `/get-suggestions-by-category/:category`
 
-**Description:** Write your description here
+**Description:** Returns an array of suggestions that match the given category, passed as a URL parameter.
+
+**Example Request URL:** `/get-suggestions-by-category/UX`
 
 **Example Response:**
-
-```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+```json
+[
+  {
+    "id": 1,
+    "title": "Very useful",
+    "description": "I use it to add value.",
+    "category": "UX"
+  }
+]
 ```
 
 ---
 
-### 🔹 POST `/add-one-suggestion`
+## 🔹 POST `/add-one-suggestion`
 
-**Description:** Write your description here
+**Description:** Adds a new suggestion to the database. Requires a JSON body with title, description, and category. Returns the newly created suggestion.
 
 **Example Request Body:**
-
-```
-Write the data required in the request body. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
+```json
+{
+  "title": "My new suggestion",
+  "description": "Details about this suggestion.",
+  "category": "Feature"
+}
 ```
 
 **Example Response:**
-
+```json
+{
+  "id": 7,
+  "title": "My new suggestion",
+  "description": "Details about this suggestion.",
+  "category": "Feature"
+}
 ```
-Write the data returned by this endpoint. 
-Think about its data type (String, Object, Array of Objects, etc.)
-Use spaces/indents to format the data if it is an array or object. 
-```
----
-

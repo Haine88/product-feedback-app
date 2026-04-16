@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap');
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  background-color: #f2f4ff;
+  font-family: 'Jost', sans-serif;
+}
+ 
+/* ── HOME PAGE ── */
+.page {
+  display: flex;
+  gap: 30px;
+  padding: 94px 165px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+ 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 255px;
+  flex-shrink: 0;
+}
+ 
+.company-card {
+  background-image: url('../../assets/suggestions/desktop/background-header.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  padding: 24px;
+  color: white;
+  min-height: 137px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+ 
+.company-card h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+ 
+.company-card p {
+  opacity: 0.75;
+  font-size: 15px;
+  margin-top: 4px;
+}
+ 
+.filter-card {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+ 
+.filter-btn {
+  background: #f2f4ff;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 16px;
+  color: #4661e6;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+ 
+.filter-btn:hover {
+  background: #cfd7ff;
+}
+ 
+.filter-btn.active {
+  background: #4661e6;
+  color: white;
+}
+ 
+.main {
+  flex: 1;
+}
+ 
+.top-bar {
+  background: #373f68;
+  border-radius: 10px;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 24px;
+}
+ 
+.top-bar span {
+  font-size: 18px;
+  font-weight: 700;
+}
+ 
+.add-btn {
+  background: #ad1fea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+ 
+.add-btn:hover {
+  background: #c75af6;
+}
+ 
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin-bottom: 20px;
+}
+ 
+.card h3 {
+  color: #3a4374;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+ 
+.card p {
+  color: #647196;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+ 
+.badge {
+  background: #f2f4ff;
+  color: #4661e6;
+  border-radius: 10px;
+  padding: 5px 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+ 
+/* ── EMPTY STATE ── */
+.empty {
+  background: white;
+  border-radius: 10px;
+  padding: 110px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+ 
+.empty img {
+  width: 130px;
+  margin-bottom: 16px;
+}
+ 
+.empty h3 {
+  color: #3a4374;
+  font-size: 24px;
+  font-weight: 700;
+}
+ 
+.empty p {
+  color: #647196;
+  font-size: 16px;
+  max-width: 410px;
+  line-height: 1.5;
+}
+ 
+/* ── ADD FEEDBACK PAGE ── */
+.form-page {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 94px 0;
+}
+ 
+.back-link {
+  color: #647196;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 68px;
+}
+ 
+.back-link:hover {
+  text-decoration: underline;
+}
+ 
+.form-card {
+  background: white;
+  border-radius: 10px;
+  padding: 52px 42px 40px;
+  position: relative;
+}
+ 
+.form-icon {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  top: -28px;
+  left: 42px;
+}
+ 
+.form-card h1 {
+  color: #3a4374;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+ 
+.form-group {
+  margin-bottom: 24px;
+}
+ 
+.form-group label {
+  display: block;
+  color: #3a4374;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+ 
+.form-hint {
+  color: #647196;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+ 
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 5px;
+  background: #f7f8fd;
+  color: #3a4374;
+  font-family: 'Jost', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+ 
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 1px solid #4661e6;
+}
+ 
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+ 
+.input-error {
+  outline: 1px solid #d73737 !important;
+}
+ 
+.error-msg {
+  color: #d73737;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 4px;
+  display: block;
+}
+ 
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+ 
+.cancel-btn {
+  background: #3a4374;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+ 
+.cancel-btn:hover {
+  background: #656ea3;
+}
+ 
+.submit-btn {
+  background: #ad1fea;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+ 
+.submit-btn:hover {
+  background: #c75af6;
+}
+ 
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* tightened so the count sits next to the lightbulb */
+}
+ 
+.suggestions-icon {
+  width: 23px;
+  height: 24px;
+}
+ 
+/* ── TABLET (max-width: 1024px) ── */
+@media (max-width: 1024px) {
+  .page {
+    padding: 40px 40px;
+    flex-direction: column;
+  }
+ 
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+  }
+ 
+  .company-card {
+    flex: 1;
+  }
+ 
+  .filter-card {
+    flex: 1;
+  }
+}
+ 
+/* ── MOBILE (max-width: 640px) ── */
+@media (max-width: 640px) {
+  .page {
+    padding: 0;
+    gap: 0;
+  }
+ 
+  .sidebar {
+    flex-direction: column;
+    gap: 0;
+  }
+ 
+  .company-card {
+    border-radius: 0;
+    /* stack title + subtitle vertically so "Feedback Board" sits UNDER "My Company" */
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    min-height: 72px;
+    padding: 16px 24px;
+  }
+ 
+  .filter-card {
+    border-radius: 0;
+    padding: 16px 24px;
+  }
+ 
+  .top-bar {
+    border-radius: 0;
+  }
+ 
+  .main {
+    padding: 24px 16px;
+  }
+ 
+  .card {
+    padding: 24px;
+  }
+ 
+  .form-page {
+    padding: 24px 16px;
+  }
+ 
+  .back-link {
+    margin-bottom: 40px;
+  }
+ 
+  .form-card {
+    padding: 44px 24px 24px;
+  }
+ 
+  .form-icon {
+    left: 24px;
+  }
+ 
+  .form-buttons {
+    flex-direction: column-reverse;
+  }
+ 
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

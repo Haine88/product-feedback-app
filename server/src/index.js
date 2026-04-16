@@ -1,15 +1,16 @@
 import express from "express";
 import pg from "pg";
-import config from "./config.js";
+import cors from "cors";
 
 const app = express();
 const { Pool } = pg;
 
 const pool = new Pool({
-  connectionString: config.databaseUrl,
+  connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
 });
 
+app.use(cors());
 app.use(express.json());
 
 // GET all suggestions
@@ -38,6 +39,7 @@ app.post("/add-one-suggestion", async (req, res) => {
   res.json(result.rows[0]);
 });
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
