@@ -1,77 +1,68 @@
 # Product Feedback App
 
-A full-stack web application where users can view, filter, and submit product suggestions. Built as a freelance project for **My Company**.
+## 📌 Project Description & Purpose
 
-🌐 **Live Demo:** *(deploy links will be added here)*
-
----
-
-## 📸 Screenshots
-
-> Home page showing suggestions filtered by category, and the Add Feedback form.
+This project is a full-stack product feedback application where users can view, filter, and submit suggestions to help improve a company's product. It was built as a freelance project for **My Company**.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Live Site
 
-| Layer       | Technology          |
-|-------------|---------------------|
-| Frontend    | React, React Router, Vite |
-| Backend/API | Node.js, Express    |
-| Database    | PostgreSQL (hosted on Neon) |
-| Deployment  | Netlify (frontend), Render (backend) |
+Here's the link to view the live app: [product-feedback-app-haine.netlify.app](https://product-feedback-app-haine.netlify.app)
+
+---
+
+## 🖼️ Screenshots
+
+![Product Feedback App](./client/assets/screenshot.png)
 
 ---
 
 ## ✨ Features
 
+This is what you can do on the app:
+
 - View all product suggestions on the home page
 - Filter suggestions by category (UI, UX, Enhancement, Bug, Feature)
-- Submit new feedback via a form with validation
+- Submit new feedback using the Add Feedback form
+- See a "no feedback" empty state when a filtered category has no results
 - Responsive layout that works on mobile and desktop
-- "No feedback" empty state when a filtered category has no results
 
 ---
 
-## 🗂️ Project Structure
+## 🛠️ Tech Stack
 
-```
-product-feedback-app/
-├── client/               # React frontend (deployed to Netlify)
-│   └── src/
-│       ├── pages/
-│       │   ├── Home.jsx          # Home page — view & filter suggestions
-│       │   └── AddFeedback.jsx   # Add Feedback page — submit new suggestion
-│       ├── components/           # Reusable UI components
-│       ├── App.jsx
-│       └── main.jsx
-├── server/               # Express backend (deployed to Render)
-│   └── src/
-│       ├── index.js      # API routes and server setup
-│       └── config.js     # Database connection config
-├── api-documentation.md  # Full API endpoint documentation
-└── README.md
-```
+**Frontend**
+- Languages: HTML, CSS, JavaScript
+- Framework: React (Vite), React Router
+- Deployment: Netlify
+
+**Server/API**
+- Languages: JavaScript (Node.js)
+- Framework: Express
+- Deployment: Render
+
+**Database**
+- Languages: PostgreSQL (SQL)
+- Deployment: Neon
 
 ---
 
-## 🚀 Getting Started
+## 🔹 API Documentation
 
-### Prerequisites
+These are the API endpoints I built:
 
-- Node.js (v18+)
-- A PostgreSQL database (e.g. [Neon](https://neon.tech))
+1. `GET /get-all-suggestions` — Returns all suggestions from the database
+2. `GET /get-suggestions-by-category/:category` — Returns suggestions filtered by category
+3. `POST /add-one-suggestion` — Adds a new suggestion to the database
 
-### 1. Clone the repo
+Here's the link to the full API documentation: [api-documentation.md](./api-documentation.md)
 
-```bash
-git clone https://github.com/YOUR-USERNAME/product-feedback-app.git
-cd product-feedback-app
-```
+---
 
-### 2. Set up the database
+## 🗄️ Database Schema
 
-Create a `suggestions` table in your PostgreSQL database:
+Here's the SQL I used to create my tables:
 
 ```sql
 CREATE TABLE suggestions (
@@ -82,73 +73,24 @@ CREATE TABLE suggestions (
 );
 ```
 
-Insert some sample data:
+---
 
-```sql
-INSERT INTO suggestions (title, description, category) VALUES
-  ('Very useful', 'I use it to add value.', 'UX'),
-  ('Add animation', 'Make the page sparkle or add some sort of animation for fun interaction', 'UX'),
-  ('Dark mode support', 'Allow users to switch between light and dark themes.', 'Feature');
-```
+## 💭 Reflections
 
-### 3. Run the backend
+What I learned: that the second time you do things it gets easier.
 
-```bash
-cd server
-npm install
-```
+What I'm proud of: that i be able to picture the bigger picture and achieve them 
 
-Create a `src/config.js` file with your Neon database connection string:
+What challenged me: refresh my memory with some css
 
-```js
-const config = {
-  databaseUrl: "YOUR_NEON_DATABASE_URL_HERE"
-};
+Future ideas for how I'd continue building this project:
 
-export default config;
-```
-
-Start the server:
-
-```bash
-node --watch src/index.js
-```
-
-The API will be running at `http://localhost:3000`.
-
-### 4. Run the frontend
-
-```bash
-cd client
-npm install
-npm run dev
-```
-
-The app will be running at `http://localhost:5173`.
+1. Add upvoting so users can vote on suggestions
+2. Add the ability to edit and delete suggestions
+3. Add comments to suggestions
 
 ---
 
-## 📘 API Endpoints
+## 🙌 Credits & Shoutouts
 
-Full documentation is available in [`api-documentation.md`](./api-documentation.md).
-
-| Method | Endpoint                                  | Description                        |
-|--------|-------------------------------------------|------------------------------------|
-| GET    | `/get-all-suggestions`                    | Returns all suggestions            |
-| GET    | `/get-suggestions-by-category/:category`  | Returns suggestions by category    |
-| POST   | `/add-one-suggestion`                     | Adds a new suggestion              |
-
----
-
-## 🌍 Deployment
-
-- **Backend** deployed to [Render](https://render.com)
-- **Frontend** deployed to [Netlify](https://netlify.com)
-
-Once deployed, update the Base URL in `api-documentation.md` with your live Render URL.
-
----
-
-## 👤 Author
-
-Built by Haine — freelance full-stack developer project.
+Shoutout to ME ! yay 
